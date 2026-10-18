@@ -1,3 +1,4 @@
+
 package smart_clinic;
 
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +12,10 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins(
+                        "http://localhost:3000",
+                        "https://smart-clinic-frontend-6ecu.vercel.app"
+                )
                 .allowedMethods(
                         "GET",
                         "POST",
